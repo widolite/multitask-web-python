@@ -1,0 +1,32 @@
+{% extends "multitask/base.html" %}
+{% load i18n %}
+{% block title %} Multitask - Inicio {% endblock %}
+{% block main_contect %}
+
+    {% for channel in channels %}
+
+        {% if channel.status == 0 %}
+
+            <p>
+            <form action="channel/{{ channel.channel }}" method="get">
+                <button type="submit" id="{{ channel.channel }}" align="center"
+                        style="height: 70px; width: 235px; color:white ; font-family:calibri ; font-size:25px; font-weight:bold; ;text-shadow: 0px 0px 3px #fff; background: #F93; margin: -10px -5px; border-radius: 10px; border-width: 0px;">{{ channel.name }}</button>
+            </form>
+            </p>
+            <br/>
+
+        {% else %}
+
+            <p>
+            <form action="channel/{{ channel.channel }}" method="get">
+                <button type="submit" id="{{ channel.channel }}" align="center"
+                        style="height: 70px; width: 235px; color:red   ; font-family:calibri ; font-size:25px; font-weight:bold; ;text-shadow: 0px 0px 3px #fff; background: #F93; margin: -10px -5px; border-radius: 10px; border-width: 0px;">{{ channel.name }}</button>
+            </form>
+            </p>
+            <br/>
+
+        {% endif %}
+
+    {% endfor %}
+
+{% endblock %}

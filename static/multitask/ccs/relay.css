@@ -1,0 +1,213 @@
+body {
+    font-family: Verdana, Arial, sans-serif;
+    background: #5b5b5b;
+    margin: 0px auto;
+    padding: 0 0 20px 0;
+}
+
+#shadow-one {
+    width: 250px;
+    border: 0.1px solid #555;
+    border-top: 5;
+    margin: 0px auto;
+    background-image: url(../images/Skyn_2.png);
+    alignment-adjust: auto;
+    float: center;
+}
+
+#shadow-two {
+    border: 1px solid #4b4b4b;
+    border-top: px;
+    background-image: url(../images/Skyn_2.png);
+    alignment-adjust: central;
+}
+
+#shadow-three {
+    border: 1px solid #444;
+    border-top: 0;
+}
+
+#shadow-four {
+    border: 1px solid #3a3a3a;
+    border-top: 0;
+    alignment-adjust: central;
+}
+
+#page {
+    border: 1px solid #333;
+    background: #fff;
+    border-top: 0;
+    padding: 20px;
+    font-size: 10pt;
+}
+
+#page td {
+    font-size: 10pt;
+}
+
+#title {
+    background: #c00;
+    padding: 4px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 15px;
+    height: 16px;
+}
+
+#title .right {
+    float: right;
+    width: 300px;
+    text-align: right;
+}
+
+#menu {
+    float: left;
+    width: 150px;
+    padding-right: 20px;
+}
+
+#menu a {
+    width: 140px;
+    display: block;
+    background: #00c;
+    color: green;
+    padding: 8px;
+    font-weight: bold;
+    border-bottom: 1px solid #fff;
+    text-decoration: none;
+}
+
+#menu a:hover {
+    background: #d33;
+}
+
+#content {
+    width: 271px;
+    float: none;
+    padding-right: 10px;
+}
+
+#content a {
+    color: #c00;
+    text-decoration: none;
+}
+
+#content a:hover {
+    color: #d33;
+    text-decoration: underline;
+}
+
+#content h1 {
+    margin-top: 0px;
+}
+
+.spacer {
+    clear: both;
+}
+
+#footer {
+    font-size: 0.8em;
+    color: #666;
+    text-align: center;
+    margin: 10px 50px 0 50px;
+    padding-top: 10px;
+    border-top: 1px dotted #666;
+}
+
+#status {
+    width: 240px;
+    font-weight: bold;
+    alignment-adjust: central;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0px;
+}
+
+#status p {
+    padding: 5px 0 5px 10px;
+    text-indent: -10px;
+    margin: 0;
+}
+
+#status .relays {
+    font-size: 24pt;
+}
+
+#status .but {
+    font-size: 12pt;
+}
+
+#status .relays a {
+    color: #ddd;
+    cursor: pointer;
+}
+
+#status .relays a:hover {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.code {
+    font-family: Courier New, Courier, fixed-width, fixed;
+}
+
+.error {
+    margin-left: 10px;
+    padding: 10px;
+    background: #fdd;
+    border-left: 2px solid #900;
+}
+
+#content h6 {
+    border-top: 1px dashed #333;
+    margin: 15px;
+    padding: 0px;
+    height: 1px;
+}
+
+fieldset {
+    margin: 10px 40px 10px 40px;
+    padding: 8px;
+    border: 1px dotted #333;
+    background: #ddd;
+}
+
+fieldset div {
+    padding: 2px 0px 2px 150px;
+}
+
+fieldset div label {
+    margin-left: -140px;
+    padding-top: 2px;
+    width: 135px;
+    font-weight: bold;
+    position: absolute;
+}
+
+fieldset input {
+    width: 250px;
+}
+
+fieldset input.sm {
+    width: auto;
+}
+
+fieldset textarea {
+    width: 250px;
+}
+
+@keyframes blinker {
+    0% {
+        visibility: visible;
+    }
+    50% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+
+#loading {
+    animation: blinker steps(1) 2s infinite;
+}
