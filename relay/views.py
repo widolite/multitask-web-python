@@ -18,7 +18,7 @@ def index(request):
 
     context = {}
 
-    for channel in range(1, 7):
+    for channel in range(1, 9):
         channels.append(Relay(channel, 'Channel%s' % channel))
 
     # Sort the list with the channel attribute of the Relay class

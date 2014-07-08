@@ -7,7 +7,7 @@ import RPi.GPIO as GPIO
 
 
 class Relay(object):
-    PINS = [4, 17, 22, 7, 8, 25, 24, 23]
+    PINS = [4, 17, 27, 22, 25, 24, 23, 18]
 
     channel = ''
 
