@@ -1,34 +1,53 @@
 {% extends "multitask/base.html" %}
 {% load i18n %}
 {% block title %} Multitask - Inicio {% endblock %}
+{% block style %}
+    {% load staticfiles %}
+    <link href="{% static "multitask/ccs/boilerplate.css" %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static "multitask/ccs/relay.css" %}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+{% block script %}
+    <script src="{% static "multitask/js/jquery-1.11.1.min.js" %}" type=" text/javascript" charset="utf-8"></script>
+    <script src="{% static "multitask/js/toggle_channel.js" %}" type="text/javascript" charset="utf-8"></script>
+{% endblock %}
 {% block main_contect %}
+    <div class="gridContainer clearfix" align="center">
+        <div id="LayoutDiv1" align="center"><img src="{% static "multitask/images/Apillave_banner2.png" %}"
+                                                 alt=""/><br/></div>
+        <div id="LayoutDiv2" align="center">
+            {% for channel in channels %}
 
-    {% for channel in channels %}
+                {% if channel.status == 0 %}
+                    <p>
+                        <button type="submit" id="channel-{{ channel.channel }}" align="center"
+                                style="height: 70px; width: 235px; color:white ; font-family:calibri ; font-size:25px; font-weight:bold; ;text-shadow: 0px 0px 3px #fff; background: #F93; margin: -10px -5px; border-radius: 10px; border-width: 0px;"
+                                onclick="toggle_channel({{ channel.channel }})">{{ channel.name }}</button>
+                    </p>
+                    <br/>
 
-        {% if channel.status == 0 %}
-
-            <p>
-            <form action="channel/{{ channel.channel }}" method="get">
-                <button type="submit" id="{{ channel.channel }}" align="center"
-                        style="height: 70px; width: 235px; color:white ; font-family:calibri ; font-size:25px; font-weight:bold; ;text-shadow: 0px 0px 3px #fff; background: #F93; margin: -10px -5px; border-radius: 10px; border-width: 0px;">{{ channel.name }}</button>
-            </form>
-            </p>
-            <br/>
-
-        {% else %}
-
-            <p>
-            <form action="channel/{{ channel.channel }}" method="get">
-                <button type="submit" id="{{ channel.channel }}" align="center"
-                        style="height: 70px; width: 235px; color:red   ; font-family:calibri ; font-size:25px; font-weight:bold; ;text-shadow: 0px 0px 3px #fff; background: #F93; margin: -10px -5px; border-radius: 10px; border-width: 0px;">{{ channel.name }}</button>
-            </form>
-            </p>
-            <br/>
-
-        {% endif %}
-
-    {% endfor %}
-
+                {% else %}
+                    <p>
+                        <button type="submit" id="channel-{{ channel.channel }}" align="center"
+                                style="height: 70px; width: 235px; color:red   ; font-family:calibri ; font-size:25px; font-weight:bold; ;text-shadow: 0px 0px 3px #fff; background: #F93; margin: -10px -5px; border-radius: 10px; border-width: 0px;"
+                                onclick="toggle_channel({{ channel.channel }})">{{ channel.name }}</button>
+                    </p>
+                    <br/>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
 {% block camera %}
+    <div id="LayoutDiv3" align="center">
+        <img src="http://192.168.1.165/videostream.cgi?user=guest&pwd=guest" alt="Camara Exterior">
+    </div>
+{% endblock %}
+{% block footer_contect %}
+    <div id="LayoutDiv4" align="center"></br></br></br></br></br></br></br></br></br></br></br><br><img
+            src={% static "multitask/images/globe-256.png" %} alt="" width="57" height="59"/>
+        </br>
+        www.ingenieriamulticast.com
+        </br>
+    </div>
+    <div id="LayoutDiv5" align="center">&quot;LayoutDiv5&quot;</div>
 {% endblock %}

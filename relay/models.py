@@ -1,3 +1,4 @@
+#!/usr/bin/python
 __author__ = "Ing. Hector Guerrero Landaeta"
 __email__ = "hectorguerrero1866@gmail.com"
 __api__ = "Multitask"
@@ -67,5 +68,51 @@ class Relay(object):
             GPIO.cleanup(self.pin)
 
 
+def main():
+    parser = OptionParser(description="Command to interact with the GPIO of the raspberry", version="1.0", usage="")
+
+    parser.add_option("-c", "--channel", dest="channel", help="Channel number to be activated")
+
+    parser.add_option("-s", "--seconds", dest="sec", help="Seconds until the channel turn off")
+
+    parser.add_option("-n", "--name", dest="name", help="Name to set to the channel")
+
+    parser.add_option("-t", "--toggle", dest="toggle", help="Toggle the channel")
+
+    parser.add_option("-S", "--status", dest="status", help="Get the status of the channel")
+
+    options, arguments = parser.parse_args()
+
+    options.channel = int(DEFAULTS['channel']) if not options.channel else int(options.channel)
+
+    options.sec = float(DEFAULTS['sec']) if not options.sec else float(options.sec)
+
+    options.name = DEFAULTS['name'] if not options.name else options.name
+
+    if options.channel and options.status:
+
+        channel = Relay(options.channel)
+
+        sys.exit(channel.status)
+
+    elif options.channel and options.toggle:
+
+            channel = Relay(options.channel)
+
+            channel.toggle(options.sec)
+
+            sys.exit(channel.status)
+
+    else:
+
+        parser.print_help()
+
+
 if __name__ == '__main__':
-    pass
+    from optparse import OptionParser
+
+    import sys
+
+    DEFAULTS = {'channel': '1', 'sec': '0.0', 'name': 'Channel'}
+
+    main()

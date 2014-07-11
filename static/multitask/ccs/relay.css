@@ -1,213 +1,199 @@
+@charset "utf-8";
+/* Medios fluidos sencillos
+   Nota: Los medios fluidos exigen la eliminación de los atributos de altura y anchura de los medios del código HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+
 body {
-    font-family: Verdana, Arial, sans-serif;
-    background: #5b5b5b;
-    margin: 0px auto;
-    padding: 0 0 20px 0;
+    background: url(../images/wood5.jpg) repeat;
 }
 
-#shadow-one {
-    width: 250px;
-    border: 0.1px solid #555;
-    border-top: 5;
-    margin: 0px auto;
-    background-image: url(../images/Skyn_2.png);
-    alignment-adjust: auto;
-    float: center;
+img, object, embed, video {
+    max-width: 100%;
 }
 
-#shadow-two {
-    border: 1px solid #4b4b4b;
-    border-top: px;
-    background-image: url(../images/Skyn_2.png);
-    alignment-adjust: central;
+/* IE 6 no admite max-width (anchura máxima), por lo que usa de manera predeterminada una anchura del 100% */
+.ie6 img {
+    width: 100%;
 }
 
-#shadow-three {
-    border: 1px solid #444;
-    border-top: 0;
-}
+/*
+	Propiedades de cuadrícula fluida de Dreamweaver
+	----------------------------------
+	dw-num-cols-mobile:		2;
+	dw-num-cols-tablet:		2;
+	dw-num-cols-desktop:	4;
+	dw-gutter-percentage:	25;
+	
+	Inspiración obtenida de "Responsive Web Design" de Ethan Marcotte 
+	http://www.alistapart.com/articles/responsive-web-design
+	
+	y Golden Grid System de Joni Korpi
+	http://goldengridsystem.com/
+*/
 
-#shadow-four {
-    border: 1px solid #3a3a3a;
-    border-top: 0;
-    alignment-adjust: central;
-}
+/* Diseño móvil: 480 px e inferior. */
 
-#page {
-    border: 1px solid #333;
-    background: #fff;
-    border-top: 0;
-    padding: 20px;
-    font-size: 10pt;
-}
-
-#page td {
-    font-size: 10pt;
-}
-
-#title {
-    background: #c00;
-    padding: 4px;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 15px;
-    height: 16px;
-}
-
-#title .right {
-    float: right;
-    width: 300px;
-    text-align: right;
-}
-
-#menu {
-    float: left;
-    width: 150px;
-    padding-right: 20px;
-}
-
-#menu a {
-    width: 140px;
-    display: block;
-    background: #00c;
-    color: green;
-    padding: 8px;
-    font-weight: bold;
-    border-bottom: 1px solid #fff;
-    text-decoration: none;
-}
-
-#menu a:hover {
-    background: #d33;
-}
-
-#content {
-    width: 271px;
-    float: none;
-    padding-right: 10px;
-}
-
-#content a {
-    color: #c00;
-    text-decoration: none;
-}
-
-#content a:hover {
-    color: #d33;
-    text-decoration: underline;
-}
-
-#content h1 {
-    margin-top: 0px;
-}
-
-.spacer {
-    clear: both;
-}
-
-#footer {
-    font-size: 0.8em;
-    color: #666;
-    text-align: center;
-    margin: 10px 50px 0 50px;
-    padding-top: 10px;
-    border-top: 1px dotted #666;
-}
-
-#status {
-    width: 240px;
-    font-weight: bold;
-    alignment-adjust: central;
+.gridContainer {
     margin-left: auto;
     margin-right: auto;
-    border: 0px;
+    width: 90%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
-#status p {
-    padding: 5px 0 5px 10px;
-    text-indent: -10px;
-    margin: 0;
+#LayoutDiv1 {
+    clear: both;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    display: block;
+    padding-top: 10%
 }
 
-#status .relays {
-    font-size: 24pt;
+#LayoutDiv2 {
+    padding-top: 5%;
+    clear: both;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
 }
 
-#status .but {
-    font-size: 12pt;
-}
-
-#status .relays a {
-    color: #ddd;
-    cursor: pointer;
-}
-
-#status .relays a:hover {
-    color: #ddd;
-    text-decoration: none;
-}
-
-.code {
-    font-family: Courier New, Courier, fixed-width, fixed;
-}
-
-.error {
-    margin-left: 10px;
-    padding: 10px;
-    background: #fdd;
-    border-left: 2px solid #900;
-}
-
-#content h6 {
-    border-top: 1px dashed #333;
-    margin: 15px;
-    padding: 0px;
-    height: 1px;
-}
-
-fieldset {
-    margin: 10px 40px 10px 40px;
-    padding: 8px;
-    border: 1px dotted #333;
-    background: #ddd;
-}
-
-fieldset div {
-    padding: 2px 0px 2px 150px;
-}
-
-fieldset div label {
-    margin-left: -140px;
-    padding-top: 2px;
-    width: 135px;
+#LayoutDiv3 {
+    clear: both;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    display: block;
+    color: #FFF;
+    font-size: 12px;
+    font-family: sans-serif;
     font-weight: bold;
-    position: absolute;
 }
 
-fieldset input {
-    width: 250px;
+#LayoutDiv4 {
+    clear: both;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    display: block;
+    font-size: 12px;
+    color: #FFF;
+    font-weight: bold;
 }
 
-fieldset input.sm {
-    width: auto;
+#LayoutDiv5 {
+    clear: both;
+    float: left;
+    margin-left: 0;
+    width: 100%;
+    display: block;
 }
 
-fieldset textarea {
-    width: 250px;
-}
+/* Diseño tableta: de 481 px a 768 px. Hereda estilos de: Diseño móvil. */
 
-@keyframes blinker {
-    0% {
-        visibility: visible;
+@media only screen and (min-width: 481px) {
+    .gridContainer {
+        width: 90%;
+        padding-left: 1%;
+        padding-right: 1%;
     }
-    50% {
-        visibility: hidden;
+
+    #LayoutDiv1 {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
     }
-    100% {
-        visibility: visible;
+
+    #LayoutDiv2 {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+
+    #LayoutDiv3 {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+        color: #FFF;
+        font-size: 12px;
+    }
+
+    #LayoutDiv4 {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+
+    #LayoutDiv5 {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
     }
 }
 
-#loading {
-    animation: blinker steps(1) 2s infinite;
+/* Diseño escritorio: de 769 px hasta un máximo de 1232 px.  Hereda estilos de: Diseño móvil y Diseño tableta. */
+
+@media only screen and (min-width: 769px) {
+    .gridContainer {
+        width: 66.5%;
+        max-width: 1232px;
+        padding-left: 1.75%;
+        padding-right: 1.75%;
+        margin: auto;
+    }
+
+    #LayoutDiv1 {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+
+    #LayoutDiv2 {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+
+    #LayoutDiv3 {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+        font-size: 12px;
+    }
+
+    #LayoutDiv4 {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
+
+    #LayoutDiv5 {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        width: 100%;
+        display: block;
+    }
 }
